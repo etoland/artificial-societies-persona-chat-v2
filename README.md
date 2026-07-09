@@ -1,5 +1,5 @@
 # Persona Chat v2 — Societies Engineer Task
-**Live demo:** https://artificial-societies-persona-chat-v2-i9ijpmlxm.vercel.app/
+**Live demo:** https://artificial-societies-persona-chat-v.vercel.app/
 
 A redesign of the persona chat feature in Radiant, built around the five pieces of client feedback in the brief. Built with Next.js (App Router), TypeScript, and Tailwind, styled to match the existing Apple-minimal look of the platform.
 
