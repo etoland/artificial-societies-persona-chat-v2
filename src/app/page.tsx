@@ -12,7 +12,6 @@ import { PanelChat } from "@/components/PanelChat";
 import { InfoTooltip } from "@/components/InfoTooltip";
 import { HeaderGlossary } from "@/components/HeaderGlossary";
 import { WelcomeToast } from "@/components/WelcomeToast";
-import { Logo } from "@/components/Logo";
 import { useConversations } from "@/lib/useConversations";
 import { ChatMessage, SeasonAnswer } from "@/lib/types";
 import { personasForAnswer } from "@/lib/mockData";
@@ -56,8 +55,10 @@ export default function Home() {
       <WelcomeToast />
       <header className="border-b border-[var(--border)] px-6 py-4 flex items-center justify-between shrink-0">
         <div className="flex items-center gap-2.5">
-          <Logo size={20} />
-          <span className="font-semibold text-[15px]">Artificial Societies</span>
+          <div className="w-7 h-7 rounded-[8px] bg-[var(--foreground)] flex items-center justify-center">
+            <span className="text-white text-[13px] font-semibold">R</span>
+          </div>
+          <span className="font-semibold text-[15px]">Radiant</span>
         </div>
         <HeaderGlossary />
       </header>

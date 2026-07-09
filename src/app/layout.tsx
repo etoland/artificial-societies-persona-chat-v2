@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Artificial Societies — Persona Chat",
+  title: "Radiant — Persona Chat",
   description: "Chat with simulated AI personas from your survey results.",
 };
 
