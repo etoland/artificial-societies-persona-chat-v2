@@ -29,34 +29,58 @@ export function ResultsPanel({ onOpenPanel }: { onOpenPanel: (answer: SeasonAnsw
           side by side, instead of opening separate 1:1 chats.
         </InfoTooltip>
       </div>
-      <div className="mt-3 space-y-4">
-        {breakdown.map((b) => (
-          <div key={b.answer} className="group">
-            <div className="flex items-center justify-between text-[13px] mb-1.5">
-              <span className="text-[var(--muted)]">{b.answer}</span>
-              <div className="flex items-center gap-2">
-                <span className="font-medium">{b.pct}%</span>
-                <button
-                  onClick={() => onOpenPanel(b.answer)}
-                  className="flex items-center gap-1 text-[11px] font-medium text-[var(--muted)] border border-[var(--border)] rounded-full px-2 py-0.5 hover:border-red-500 hover:text-red-500 transition-colors"
-                >
-                  <Users size={11} />
-                  Ask group
-                </button>
-              </div>
-            </div>
-            <button
-              onClick={() => onOpenPanel(b.answer)}
-              className="w-full h-1.5 rounded-full bg-[var(--surface)] overflow-hidden block"
-              title={`Ask everyone who chose ${b.answer} a question`}
+      <div className="mt-3 space-y-3">
+        {breakdown.map((b) => {
+          const isTop = b.answer === top.answer;
+          return (
+            <div
+              key={b.answer}
+              className={`group rounded-[12px] transition-colors ${
+                isTop ? "px-2.5 py-2 -mx-2.5" : ""
+              }`}
+              style={isTop ? { background: `${b.color}12` } : undefined}
             >
-              <div
-                className="h-full rounded-full transition-transform group-hover:scale-y-150 origin-center"
-                style={{ width: `${b.pct}%`, background: b.color }}
-              />
-            </button>
-          </div>
-        ))}
+              <div className="flex items-center justify-between text-[13px] mb-1.5">
+                <span
+                  className={isTop ? "font-semibold" : "text-[var(--muted)]"}
+                  style={isTop ? { color: b.color } : undefined}
+                >
+                  {b.answer}
+                  {isTop && (
+                    <span
+                      className="ml-1.5 text-[10px] font-semibold uppercase tracking-wide align-middle rounded-full px-1.5 py-0.5"
+                      style={{ background: `${b.color}22`, color: b.color }}
+                    >
+                      Top choice
+                    </span>
+                  )}
+                </span>
+                <div className="flex items-center gap-2">
+                  <span className={isTop ? "font-semibold" : "font-medium"} style={isTop ? { color: b.color } : undefined}>
+                    {b.pct}%
+                  </span>
+                  <button
+                    onClick={() => onOpenPanel(b.answer)}
+                    className="flex items-center gap-1 text-[11px] font-medium text-[var(--muted)] border border-[var(--border)] rounded-full px-2 py-0.5 hover:border-red-500 hover:text-red-500 transition-colors"
+                  >
+                    <Users size={11} />
+                    Ask group
+                  </button>
+                </div>
+              </div>
+              <button
+                onClick={() => onOpenPanel(b.answer)}
+                className="w-full h-1.5 rounded-full bg-[var(--surface)] overflow-hidden block"
+                title={`Ask everyone who chose ${b.answer} a question`}
+              >
+                <div
+                  className="h-full rounded-full transition-transform group-hover:scale-y-150 origin-center"
+                  style={{ width: `${b.pct}%`, background: b.color }}
+                />
+              </button>
+            </div>
+          );
+        })}
       </div>
 
       <h3 className="mt-8 text-[14px] font-semibold">Insights</h3>

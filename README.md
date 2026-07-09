@@ -1,4 +1,5 @@
 # Persona Chat v2 — Societies Engineer Task
+
 **Live demo:** https://artificial-societies-persona-chat-v.vercel.app/
 
 A redesign of the persona chat feature in Radiant, built around the five pieces of client feedback in the brief. Built with Next.js (App Router), TypeScript, and Tailwind, styled to match the existing Apple-minimal look of the platform.
@@ -42,6 +43,19 @@ This is the specific data-provenance question, and the one I spent the most effo
 - **Transcript/pull-quote visual language.** Answers grounded in real survey data render as large serif pull-quotes; answers extrapolated from persona traits render smaller and muted. Visual confidence maps to data confidence, so the distinction is legible even before reading the citation.
 - **Regenerate is disabled on grounded replies.** You can regenerate an interpreted line, but not a quoted fact — reinforcing, through the interface itself, that quoted data isn't negotiable the way inferred commentary is.
 - **A permanent "How this works" glossary in the header**, plus a one-time onboarding toast pointing at it — because a citation mechanism doesn't help if people don't know it's there or how to read it.
+
+---
+
+## Additional UI polish beyond the stated feedback
+
+A few smaller changes weren't direct responses to the five complaints, but felt like reasonable craft/attention-to-detail improvements while in the code:
+
+- **Dot sizing by seniority** on the persona graph — executives render larger than entry-level, so the graph itself hints at who might be worth clicking first (the same idea as headliner-sized acts on a festival lineup).
+- **Top-choice highlighting** in the Results breakdown — the leading answer gets a tinted background, bolded/color-matched text, and a small "Top choice" badge, so the standout result is scannable at a glance rather than requiring you to compare four percentages manually.
+- **The survey question boxed and labeled** ("Question") separately from the "Results" header, so it doesn't run together with the page title.
+- The "Ask group" affordance turns red on hover, giving it a bit more visual weight against an otherwise fairly neutral, monochrome UI.
+
+None of these were asked for — they're small enough that I'd flag them as "nice to have, cut if time-constrained" in a real sprint, but they were cheap here and improve scannability.
 
 ---
 
