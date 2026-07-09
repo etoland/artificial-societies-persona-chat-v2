@@ -1,6 +1,6 @@
 import { SURVEY_QUESTION, resultsBreakdown, commentThemes } from "@/lib/mockData";
 import { SeasonAnswer } from "@/lib/types";
-import { Users } from "lucide-react";
+import { Users, BarChart3, Download } from "lucide-react";
 import { InfoTooltip } from "./InfoTooltip";
 
 export function ResultsPanel({ onOpenPanel }: { onOpenPanel: (answer: SeasonAnswer) => void }) {
@@ -10,7 +10,21 @@ export function ResultsPanel({ onOpenPanel }: { onOpenPanel: (answer: SeasonAnsw
 
   return (
     <aside className="w-[340px] shrink-0 border-l border-[var(--border)] px-6 py-6 overflow-y-auto">
-      <h2 className="text-[15px] font-semibold">Results</h2>
+      <div className="flex items-center justify-between">
+        <h2 className="text-[15px] font-semibold">Results</h2>
+        <div className="flex items-center gap-2">
+          <button className="flex items-center gap-1.5 text-[12.5px] font-medium border border-[var(--border)] rounded-full px-3 py-1.5 hover:border-[var(--foreground)] transition-colors">
+            <BarChart3 size={13} />
+            Compare
+          </button>
+          <button
+            className="text-[var(--muted-subtle)] hover:text-[var(--foreground)] p-1.5 rounded-full hover:bg-[var(--surface)] transition-colors"
+            aria-label="Download results"
+          >
+            <Download size={15} />
+          </button>
+        </div>
+      </div>
       <div className="mt-3 rounded-[14px] border border-[var(--border)] bg-[var(--surface)] px-4 py-3">
         <div className="text-[10.5px] uppercase tracking-wide font-medium text-[var(--muted-subtle)] mb-1">
           Question

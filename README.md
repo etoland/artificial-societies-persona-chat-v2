@@ -54,6 +54,7 @@ A few smaller changes weren't direct responses to the five complaints, but felt 
 - **Top-choice highlighting** in the Results breakdown — the leading answer gets a tinted background, bolded/color-matched text, and a small "Top choice" badge, so the standout result is scannable at a glance rather than requiring you to compare four percentages manually.
 - **The survey question boxed and labeled** ("Question") separately from the "Results" header, so it doesn't run together with the page title.
 - The "Ask group" affordance turns red on hover, giving it a bit more visual weight against an otherwise fairly neutral, monochrome UI.
+- **"Compare" and download icons** added next to the Results header, matching the current product's existing layout from the reference screenshots. These are decorative in this build — I didn't know what they actually do in the live product, so rather than guess at behavior I left them visually present but inert, for parity with the existing UI rather than functional completeness.
 
 None of these were asked for — they're small enough that I'd flag them as "nice to have, cut if time-constrained" in a real sprint, but they were cheap here and improve scannability.
 
